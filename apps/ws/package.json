@@ -1,0 +1,11 @@
+{
+  "name": "@repo/ws-app",
+  "version": "1.0.0",
+  "dependencies": {
+    "@repo/database": "*",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.18.1"
+  }
+}
