@@ -17,7 +17,7 @@ app.post("/",async(req:Request,res:Response)=>{
         }
     })
 })
-app.listen(3000,()=>{
+app.listen(3001,()=>{
     console.log("Http-Server Started")
 })
 
