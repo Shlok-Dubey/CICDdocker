@@ -5,7 +5,7 @@ on :
 
 jobs :
   build : 
-    runs-on : unbuntu-latest
+    runs-on : ubuntu-latest
     steps : 
       - name : Checkout the code
         uses : actions/checkout@v2
@@ -22,4 +22,4 @@ jobs :
           context : .
           file : ./Docker/dockerfile.backend
           push : true
-          tags : stackyshlok/ws:{{github.sha}}
+          tags : stackyshlok/ws:${{github.sha}}
