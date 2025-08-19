@@ -20,6 +20,6 @@ jobs :
         uses : docker/build-push-action@v4
         with : 
           context : .
-          file : ./Docker/dockerfile.backend
+          file : ./Docker/dockerfile.socket
           push : true
           tags : stackyshlok/ws:${{github.sha}}
