@@ -1,0 +1,19 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+ARG DATABASE_ARG
+COPY ./package.json ./package.json
+COPY ./packages ./packages
+COPY ./package-lock.json ./package-lock.json
+COPY ./turbo.json ./turbo.json
+COPY ./apps/http-server ./apps/http-server
+
+RUN npm install
+RUN DATSBASE_URL=${DATABASE_ARG} npm run db:migrate 
+
+
+EXPOSE 3000
+
+CMD ["npm","run","start-web"]
+

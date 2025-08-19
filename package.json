@@ -7,7 +7,11 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
-    "db:migrate" : "cd packages/db && npx prisma generate && cd ../.."
+    "db:migrate" : "cd packages/Database && npx prisma generate && cd ../..",
+    "start-http": "cd apps/http-server && npx tsx index.ts && cd ../..",
+    "start-ws": "cd apps/ws && npx tsx index.ts && cd ../..",
+    "start-web": "cd apps/web && npm run dev && cd ../.."
+
   },
   "devDependencies": {
     "prettier": "^3.6.2",
