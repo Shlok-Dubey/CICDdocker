@@ -1,11 +1,11 @@
 name : Deploy of backend
 on : 
   push : 
-    branch : [main]
+    branches : [main]
 
 jobs : 
   build : 
-    runs-on : ubantu-latest
+    runs-on : ubuntu-latest
     steps : 
       - name : Checkout the code
         uses : actions/checkout@v2
@@ -22,4 +22,4 @@ jobs :
           context : .
           file : ./Docker/dockerfile.backend
           push : true
-          tags : Backend/:${{github.sha}}
+          tags : backend/:${{github.sha}}
