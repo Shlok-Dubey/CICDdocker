@@ -22,4 +22,4 @@ jobs :
           context : .
           file : ./Docker/dockerfile.backend
           push : true
-          tags : cicddocker/backend:${{github.sha}}
+          tags : stackyshlok/backend:${{github.sha}}
