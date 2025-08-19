@@ -1,0 +1,25 @@
+name : Deploy of backend
+on : 
+  push : 
+    branch : [main]
+
+jobs : 
+  build : 
+    runs-on : ubantu-latest
+    steps : 
+      - name : Checkout the code
+        uses : actions/checkout@v2
+
+      - name : Docker Login
+        uses : docker/login-action@v2
+        with : 
+          username : ${{secret.DOCKER_USERNAME}}
+          password : ${{secret.DOCKER_PASSWORD}}
+
+      - name : Build and Push
+        uses : docker/build-push-action@v4
+        with : 
+          context : .
+          file : ./Docker/dockerfile.backend
+          push : true
+          tags : Backend/:${{github.sha}}
